@@ -1,0 +1,4 @@
+Configs for building a minimal DE10-nano image enabling programming via SCP over USB RNDIS (perhaps there are nicer ways of doing this, it's just a proof of concept way of programming RBFs without Quartus...)
+
+Uses https://github.com/altera-opensource/linux-socfpga v5.4.104-lts and latest git buildroot.
+
