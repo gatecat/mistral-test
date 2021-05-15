@@ -7,6 +7,8 @@ set_location_assignment PIN_W20 -to sw[3]
 # btn[1] unsupported due to requiring hmc bypass
 set_location_assignment PIN_AH17 -to btn
 
+set_location_assignment PIN_AA23 -to led[7]
+set_location_assignment PIN_Y16 -to led[6]
 set_location_assignment PIN_AE26 -to led[5]
 set_location_assignment PIN_AF26 -to led[4]
 set_location_assignment PIN_V15 -to led[3]
@@ -27,4 +29,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk
