@@ -1,4 +1,3 @@
-MISTRAL_DIR?=${HOME}/mistral
 DEVICE?=5CSEBA6U23I7
 QSF=de10nano.qsf
 
@@ -6,7 +5,7 @@ QSF=de10nano.qsf
 	yosys -p "synth_intel_alm -top top -nodsp -nolutram -nobram; write_json $@" $^
 
 %.rbf: %.json ${QSF}
-	nextpnr-mistral --mistral ${MISTRAL_DIR} --device ${DEVICE} --json $< --qsf ${QSF} --router router2 --rbf $@
+	nextpnr-mistral --device ${DEVICE} --json $< --qsf ${QSF} --compress-rbf --router router2 --rbf $@
 
 # This target program over USB gadget RNDIS, see the SD card image linked in an issue
 %.prog: %.rbf
