@@ -2,7 +2,7 @@ DEVICE?=5CSEBA6U23I7
 QSF=de10nano.qsf
 
 %.json: %.v
-	yosys -p "synth_intel_alm -top top -nodsp -nolutram -nobram; write_json $@" $^
+	yosys -p "synth_intel_alm -top top -nodsp -nobram; write_json $@" $^
 
 %.rbf: %.json ${QSF}
 	nextpnr-mistral --device ${DEVICE} --json $< --qsf ${QSF} --compress-rbf --router router2 --rbf $@
