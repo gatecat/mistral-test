@@ -2,8 +2,11 @@ module top(input clk, btn, output [7:0] led);
 
 wire [7:0] soc_led;
 
+reg clk_half;
+always @(posedge clk) clk_half <= ~clk_half;
+
 attosoc soc_i(
-    .clk(clk),
+    .clk(clk_half),
     .reset(!btn),
     .led(soc_led)
 );
